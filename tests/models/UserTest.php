@@ -14,20 +14,20 @@ class UserTest extends TestCase {
         Artisan::call('migrate:refresh');
     }
 
-    public function testGetsOldestUser()
-    {
-
-        // Integration testing
-        // Arrange: Insert two test rows into a test DB
-        factory(App\User::class)->make(['age' => 20]);
-        factory(App\User::class)->make(['age' => 30]);
-
-        // Act: call the method
-        $oldest = (new App\User)->getOldest();
-
-        // Assert
-        $this->assertEquals(30, $oldest->age);
-    }
+//    public function testGetsOldestUser()
+//    {
+//
+//        // Integration testing
+//        // Arrange: Insert two test rows into a test DB
+//        factory(App\User::class)->make(['age' => 20]);
+//        factory(App\User::class)->make(['age' => 30]);
+//
+//        // Act: call the method
+//        $oldest = (new App\User)->getOldest();
+//
+//        // Assert
+//        $this->assertEquals(30, $oldest->age);
+//    }
 
     public function testHashesPasswordWhenSet(){
         Hash::shouldReceive('make')->once()->andReturn('hashed');
