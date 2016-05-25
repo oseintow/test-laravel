@@ -6,7 +6,7 @@ before_script:
   - cp .env.travis .env
 #  - mysql -e 'create database homestead;'
   - curl -s http://getcomposer.org/installer | php
-  - composer self-update
+#  - composer self-update
   - php composer.phar install --dev
   - php artisan migrate
   - php artisan db:seed
