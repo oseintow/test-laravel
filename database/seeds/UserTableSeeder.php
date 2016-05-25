@@ -11,9 +11,12 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\User::create([
-           'email' => "oseintow@gmail.com",
-            'password' => "1234"
-        ]);
+        $user = \App\User::where("email","oseintow@gmail.com")->first();
+        if(! $user) {
+            \App\User::create([
+                'email'    => "oseintow@gmail.com",
+                'password' => "1234"
+            ]);
+        }
     }
 }
